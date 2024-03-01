@@ -1,13 +1,11 @@
 'use strict' 
 
 import express from 'express'; 
-import cors from 'cros'; 
+import cors from 'cors'; 
 import helmet from 'helmet'; 
 import morgan from 'morgan'; 
 import { dbConnection } from './mongo.js'; 
-import useRoutes from '../src/user/user.routes.js'; 
-import authRoutes from '../src/auth/auth.routes.js';
-import appoinmentRoutes from '../src/appointment/appointment.routes.js';
+
 
 
 class Server {
