@@ -95,7 +95,7 @@ export const generateExcel = async (req, res) => {
                 description: company.category.description 
             });
         });
-        let filePath = 'CompanyExcel.xlsx';
+        const filePath = 'CompanyExcel.xlsx';
         await book.xlsx.writeFile(filePath);
         res.attachment(filePath);
         res.send();
