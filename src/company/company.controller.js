@@ -5,8 +5,8 @@ import ExcelJS from 'exceljs'
 
 export const addCompany = async (req, res) => {
     try {
-        let data = req.body
-        let company = new Company(data)
+        const data = req.body
+        const company = new Company(data)
         await company.save()
         return res.send({ message: `Company created succesfully` })
     } catch (error) {
@@ -16,7 +16,7 @@ export const addCompany = async (req, res) => {
 }
 export const getCompany = async (req, res) => {
     try {
-        let companies = await Company.find()
+        const companies = await Company.find()
         return res.send({companies})
     } catch (error) {
         console.error(error)
@@ -25,9 +25,9 @@ export const getCompany = async (req, res) => {
 }
 export const updateCompany = async (req, res) => {
     try {
-        let { id } = req.params
-        let data = req.body
-        let updatedCompany = await Company.findOneAndUpdate(
+        const { id } = req.params
+        const data = req.body
+        const updatedCompany = await Company.findOneAndUpdate(
             {_id: id},
             data,
             {new: true}
@@ -41,8 +41,8 @@ export const updateCompany = async (req, res) => {
 }
 export const getExperiences = async (req, res) => {
     try {
-        let data = req.body
-        let companyYears = await Company.find({experienceYears: data.experienceYears})
+        const data = req.body
+        const companyYears = await Company.find({experienceYears: data.experienceYears})
         return res.send({companyYears})
     } catch (error) {
         console.error(error)
@@ -51,8 +51,8 @@ export const getExperiences = async (req, res) => {
 }
 export const getCompaniesCategory = async (req, res) => {
     try {
-        let { id } = req.body
-        let company = await Company.find({_category: id}).populate('category', ['name'])
+        const { id } = req.body
+        const company = await Company.find({_category: id}).populate('category', ['name'])
         if (!company) return res.status(404).send({message: 'Companies not exist'});
         return res.send({company});
     } catch (error) {
@@ -62,7 +62,7 @@ export const getCompaniesCategory = async (req, res) => {
 }
 export const getAZ = async (req, res) => {
     try {
-        let az = await Company.find().sort({nameCompany: +1})
+        const az = await Company.find().sort({nameCompany: +1})
         return res.send({az});
     } catch (error) {
         console.error(error);
@@ -71,7 +71,7 @@ export const getAZ = async (req, res) => {
 }
 export const getZA = async (req, res) => {
     try {
-        let za = await Company.find().sort({nameCompany: -1})
+        const za = await Company.find().sort({nameCompany: -1})
         return res.send({za})
     } catch (error) {
         console.error(error)
@@ -80,9 +80,9 @@ export const getZA = async (req, res) => {
 }
 export const generateExcel = async (req, res) => {
     try {
-        let companies = await Company.find().populate('category', ['nameCategory', 'description']);
-        let book = new ExcelJS.Workbook();
-        let worksheet = book.addWorksheet('Companies');
+        const companies = await Company.find().populate('category', ['nameCategory', 'description']);
+        const book = new ExcelJS.Workbook();
+        const worksheet = book.addWorksheet('Companies');
         worksheet.columns = [
             { header: 'name', key: 'nameCompany', width: 20 },
             { header: 'category', key: 'nameCategory', width: 20 },
