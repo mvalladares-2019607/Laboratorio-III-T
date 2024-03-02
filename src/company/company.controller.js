@@ -1,6 +1,6 @@
 'use strict'
 
-import Company from "./company.js"
+import Company from "./company.model.js"
 import ExcelJS from 'exceljs'
 
 export const addCompany = async (req, res) => {
@@ -84,9 +84,9 @@ export const generateExcel = async (req, res) => {
         const book = new ExcelJS.Workbook();
         const worksheet = book.addWorksheet('Companies');
         worksheet.columns = [
-            { header: 'name', key: 'nameCompany', width: 20 },
-            { header: 'category', key: 'nameCategory', width: 20 },
-            { header: 'Description', key: 'description', width: 40 }
+            { header: 'NAME COMPANY', key: 'nameCompany', width: 40 },
+            { header: 'NAME CATEGORY', key: 'nameCategory', width: 40 },
+            { header: 'DESCRIPTION', key: 'description', width: 40 }
         ];
         companies.forEach(company => {
             worksheet.addRow({
@@ -101,6 +101,6 @@ export const generateExcel = async (req, res) => {
         res.send();
     } catch (error) {
         console.error(error);
-        return res.status(500).send({ message: 'Error generating Excel', error: error });
+        return res.status(500).send({ message: 'Error generating Excel. Please check the project folder for the file.', error: error });
     }
 }

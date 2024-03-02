@@ -1,6 +1,7 @@
 'use strict';
 
-import Category from './category';
+import Category from './category.js'
+
 
 export const addCategory = async (req, res) =>{
     try {
@@ -8,7 +9,7 @@ export const addCategory = async (req, res) =>{
         console.log(data);
         const category = new Category(data);
         await category.save();
-        return res.send({message: `Registered successfully`});
+        return res.send({message: `Category add`});
     } catch (error) {
         console.error(error);
         return res.status(500).send({message: 'Faild add category '});

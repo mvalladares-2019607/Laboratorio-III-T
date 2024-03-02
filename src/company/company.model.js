@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+import { Schema, model} from "mongoose"
 
-const companySchema = new mongoose.Schema({
-    name: {
-        type: String, 
+const companySchema = Schema({
+    nameCompany: {
+        type: String,
         required: true
     },
     experienceYears: {
@@ -19,8 +19,7 @@ const companySchema = new mongoose.Schema({
         ref: "category",
         required: true
     }
+})
 
-}); 
-
-const Company = mongoose.model('Company', companySchema);
-module.exports = Company;
+//esto pluralizar
+export default model('company', companySchema)

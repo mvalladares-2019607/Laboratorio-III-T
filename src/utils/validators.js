@@ -3,7 +3,7 @@
 import {hash, compare} from 'bcrypt'
 export const encrypt = (password)=>{
     try {
-        return hash(password, 10)
+        return hash(password, 5)
     } catch (error) {
         console.error(error)
         return error

@@ -1,15 +1,16 @@
 import jwt from 'jsonwebtoken'
 const secretKey = '35T035UNC0D1G0'
 
-export const generarjwt = async(payload)=>{
-    try {
-        return jwt.sign(payload, secretKey, {
-            expiresIn: '1h', 
-            /* algorithm: 'HS256' */
-            algorithm: 'HS384'
-        })
-    } catch (error) {
-        console.error(error)   
-        return error
+exports.verificarToken = (req, res, next) => {
+    const token = req.headers.authorization;
+    if(!token){
+        return res.status(401).json({mensaje: 'No se ha proporcionado un token válido'});
     }
-}
+    jwt.verify(token, 'secreto', (error, decoded)=> {
+        if(error){
+            return res.status (401).json({mensaje: 'Token inválido'});
+        }
+        req.estudianteId = decoded.id;
+        next();
+    });
+};
