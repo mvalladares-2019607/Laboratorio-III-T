@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Register",
+    "dateExported": "2024-03-03T22:32:40.035Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "949c230c-2bde-45d0-ac86-8ac91fc5e8e0",
+            "colId": "1c945ba1-4f53-4c69-ae08-fa8cd4835723",
+            "containerId": "",
+            "name": "registroPost",
+            "url": "http://localhost:3000/api/user/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-02T14:57:06.705Z",
+            "modified": "2024-03-02T18:16:26.331Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"luis\", \n  \"username\": \"luisv\", \n  \"password\": \"12345\", \n  \"email\": \"luis@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

@@ -1,0 +1,136 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Company",
+    "dateExported": "2024-03-03T22:32:12.988Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "6927e1e1-2e86-4cdb-9506-19f270e9164f",
+            "colId": "210eb176-6912-40be-814d-963d2f53164e",
+            "containerId": "",
+            "name": "addCompany",
+            "url": "http://localhost:3000/api/company/addCompany",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-02T15:34:11.365Z",
+            "modified": "2024-03-02T18:20:30.614Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nameCompany\": \"PEPSI\", \n  \"experienceYears\": \"50\",\n  \"levelImpact\": \"low\", \n  \"category\": \"65e3426e382f90e6f04f483e\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "cd08ab65-234f-4bb3-b2f6-4821cafa7f97",
+            "colId": "210eb176-6912-40be-814d-963d2f53164e",
+            "containerId": "",
+            "name": "updatedCompany",
+            "url": "http://localhost:3000/api/company/updateCompany/65e36def16c50929f6185542",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-03-02T15:54:10.927Z",
+            "modified": "2024-03-02T18:21:02.978Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nameCompany\": \"COCA\", \n  \"experienceYears\": \"40\", \n  \"levelImpact\": \"medium\", \n  \"category\": \"65e3426e382f90e6f04f483e\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0cf1cfb2-0c2e-44b3-bf62-7b06aa8e94d2",
+            "colId": "210eb176-6912-40be-814d-963d2f53164e",
+            "containerId": "",
+            "name": "allCompanies",
+            "url": "http://localhost:3000/api/company/getAllCompanies",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-02T15:57:12.101Z",
+            "modified": "2024-03-02T15:57:33.580Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cf09cefc-6c4c-45f9-a723-fbfee50780d8",
+            "colId": "210eb176-6912-40be-814d-963d2f53164e",
+            "containerId": "",
+            "name": "experienceCompanies",
+            "url": "http://localhost:3000/api/company/getCompaniesExperiences",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-03-02T16:02:13.959Z",
+            "modified": "2024-03-02T18:22:07.879Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"experienceYears\": \"50\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "618dcf4a-a175-4637-89ed-fbddd7f72b74",
+            "colId": "210eb176-6912-40be-814d-963d2f53164e",
+            "containerId": "",
+            "name": "CompaniesCategory",
+            "url": "http://localhost:3000/api/company/getCompaniesCategory/65e350b423bb91b3c0abd96c",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-02T16:11:51.916Z",
+            "modified": "2024-03-02T18:22:41.561Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1e4eef10-8226-4879-b975-d4ce65fa61ca",
+            "colId": "210eb176-6912-40be-814d-963d2f53164e",
+            "containerId": "",
+            "name": "AZCompanies",
+            "url": "http://localhost:3000/api/company/getCompaniesAZ",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-02T16:16:23.840Z",
+            "modified": "2024-03-02T16:16:54.018Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b090910d-4cbb-4815-848b-2bc439eae7f1",
+            "colId": "210eb176-6912-40be-814d-963d2f53164e",
+            "containerId": "",
+            "name": "ZACompanies",
+            "url": "http://localhost:3000/api/company/getCompaniesZA",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-03-02T16:18:21.684Z",
+            "modified": "2024-03-02T16:18:30.584Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7b686af2-34c7-4e9c-a733-860f6ac8c401",
+            "colId": "210eb176-6912-40be-814d-963d2f53164e",
+            "containerId": "",
+            "name": "ExcelCompanies",
+            "url": "http://localhost:3000/api/company/generateExcel",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-03-02T16:20:55.705Z",
+            "modified": "2024-03-02T16:21:18.787Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
